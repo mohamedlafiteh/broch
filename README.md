@@ -8,7 +8,7 @@ A Haskell implementation of [OpenID Connect](http://openid.net/connect/).
 Building
 --------
 
-The easiest option is to use [stack](http://docs.haskellstack.org/en/stable/README/#the-haskell-tool-stack), particularly if you are new to Haskell. Follow the instructions to download and install stack (just adding the stack binary to your path), then
+The easiest option is to use slack [stack](http://docs.haskellstack.org/en/stable/README/#the-haskell-tool-stack), particularly if you are new to Haskell. Follow the instructions to download and install stack (just adding the stack binary to your path), then
 
     $ git clone https://github.com/tekul/broch
     $ cd broch
@@ -17,7 +17,7 @@ If you don't already have a compatible ghc version installed, you can get stack 
 
     $ stack setup
 
-To build the project run
+To build the project you have to run
 
     $ stack build
 
