@@ -1,12 +1,10 @@
-Broch
-=====
+# Broch
 
-A Haskell implementation of [OpenID Connect](http://openid.net/connect/).
+A Haskell implementation of Meriem was here[OpenID Connect](http://openid.net/connect/).
 
 [![Build Status](https://travis-ci.org/tekul/broch.svg?branch=master)](https://travis-ci.org/tekul/broch)
 
-Building
---------
+## Building
 
 The easiest option is to use slack [stack](http://docs.haskellstack.org/en/stable/README/#the-haskell-tool-stack), particularly if you are new to Haskell. Follow the instructions to download and install stack (just adding the stack binary to your path), then
 
@@ -17,12 +15,13 @@ If you don't already have a compatible ghc version installed, you can get stack 
 
     $ stack setup
 
+
 To build the project you have to run
+
 
     $ stack build
 
-Running with SQLite
--------------------
+## Running with SQLite
 
 If all goes well you can then run the command-line server, and start it with a sqlite database
 
@@ -35,8 +34,7 @@ The SQLite database creates a `broch.db3` file for the database. It automaticall
 
 After logging in, you will be redirected to the client app URL with a code parameter. This will give a 404, since the client isn't actually running, but you can use a utility like `curl` to mimic the client's interaction with the token endpoint and exchange the code for an access token.
 
-PostgresSQL Backend
--------------------
+## PostgresSQL Backend
 
 By default, `broch` uses a PostgresSQL database for storage. Version 9.5 or greater is required. There are two initialization scripts, `pgdb.sql` and `user.sql` which create the required schema. For a real deployment, you would run postgres as a system service running in the background, but you can also run it manually.
 
@@ -58,4 +56,3 @@ Then we run the `psql` client, create a new database and run the initialization 
 You should then have a database the server can run against, as well as the same test user and client application as for SQLite. The default connection string is `dbname=broch` so it should work with the database we just created.
 
     $ stack exec broch -- --issuer=http://localhost:3000
-
